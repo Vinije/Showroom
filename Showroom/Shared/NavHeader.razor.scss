@@ -1,0 +1,104 @@
+﻿@import "../Styles/Common.scss";
+
+.themeButton {
+    padding-top: 2rem;
+    border-bottom: solid $border_color;
+}
+
+.dark .themeButton {
+    padding-top: 2rem;
+    border-bottom: solid $dark_border_color;
+}
+
+.logo, .header {
+    border-bottom: solid $border_color;
+    align-items: center;
+    z-index: 999;
+}
+
+.dark .logo {
+    border-bottom: solid $dark_border_color;
+    align-items: center;
+    z-index: 999;
+}
+
+.dark .header {
+    border-bottom: solid $dark_border_color;
+}
+
+ul {
+    list-style-type: none;
+    padding-top: 1em;
+}
+
+li {
+    float: left;
+    background-color: $menu_item_background;
+    color: $text_color;
+}
+
+.dark li {
+    float: left;
+    background-color: $dark_menu_item_background;
+    color: $dark_text_color;
+}
+
+a {
+    display: block;
+    color: $text_color;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.dark a {
+    display: block;
+    color: $dark_text_color;
+    background-color: $dark_background_gradient;
+}
+
+li:hover {
+    background-color: $menu_item_background_hover;
+    text-decoration: none;
+}
+
+.logo {
+    border-bottom: solid $border_color;
+    color: $text_color;
+}
+
+.dark .logo {
+    border-bottom: solid $dark_border_color;
+    color: $dark_text_color;
+}
+
+p, img {
+    color: $text_color;
+}
+
+.dark p, .dark img {
+    color: $dark_text_color;
+}
+
+.title {
+    color: $text_color;
+    font-size: 24px;
+}
+
+.author {
+    color: $text_color;
+    font-size: 16px;
+}
+
+.dark .title, .dark .author {
+    color: $dark_text_color;
+}
+
+.oi {
+    color: $text_color;
+}
+
+.dark .oi {
+    color: $dark_text_color;
+}

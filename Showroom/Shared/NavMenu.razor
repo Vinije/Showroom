@@ -1,0 +1,27 @@
+﻿<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        @*<li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>*@
+
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="/EditUser" Match="NavLinkMatch.All">
+                <span class="oi oi-plus" aria-hidden="true"></span> <b style="font-size: 18px">New Scene</b>
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

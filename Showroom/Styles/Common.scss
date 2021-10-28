@@ -1,0 +1,38 @@
+﻿/*light*/
+
+$header_height: 6rem;
+$header_background_start: #ebebeb;
+$header_background_mid: #ffffff;
+$header_background_end: #ebebeb;
+$menu_item_background: rgba(#24455b, 0.5);
+$menu_item_background_hover: rgba(#24455b, 1);
+$text_color: #001f35;
+$border_color: #808080;
+$background_gradient: linear-gradient(90deg, $header_background_start 10%, $header_background_mid 40%, $header_background_mid 60%, $header_background_start 90%);
+$main_body_background: rgba(#ffffff, 0.35);
+$menu_item_background: rgba(#617e93, 0.5);
+$menu_item_background_hover: #617e93;
+
+/*dark*/
+$dark_header_height: 6rem;
+$dark_header_background_start: #232323;
+$dark_header_background_mid: #001f35;
+$dark_header_background_end: #a9a9a9;
+$dark_text_color: #ffffff;
+$dark_border_color: #808080;
+$dark_border_color_gradient: linear-gradient(90deg, $dark_header_background_end 0%, $dark_border_color 15%, $dark_border_color 70%, $dark_header_background_start 90%);
+$dark_menu_item_background: rgba(#24455b, 0.5);
+$dark_menu_item_background_hover: rgba(#24455b, 1);
+$dark_background_gradient: linear-gradient(90deg, $dark_header_background_start 10%, $dark_header_background_mid 40%, $dark_header_background_mid 60%, $dark_header_background_start 90%);
+$dark_main_body_background: rgba(#ffffff, 0.05);
+
+
+.card {
+    background: $main_body_background;
+    color: $text_color;
+}
+
+.dark .card {
+    background: $dark_main_body_background;
+    color: $dark_text_color;
+}

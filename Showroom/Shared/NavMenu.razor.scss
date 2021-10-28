@@ -1,0 +1,46 @@
+﻿@import "../Styles/Common.scss";
+
+.nav-link{
+    background-color: $menu_item_background;
+    color: $text_color;
+}
+
+.dark .nav-link{
+    background-color: $dark_menu_item_background;
+    color: $dark_text_color;
+}
+
+.sidebar .nav-item a:hover {
+    background-color: $menu_item_background_hover;
+    color: $text_color;
+}
+
+.dark {
+    & .sidebar, & .nav-item, & .a{
+        color: $dark_text_color;
+    }
+}
+
+.nav-link:hover{
+    background-color: $menu_item_background_hover;
+}
+
+a:hover{
+    background-color: $menu_item_background_hover;
+}
+
+b{
+    color: $text_color;
+}
+
+.dark b {
+    color: $dark_text_color;
+}
+
+.oi{
+    color: $text_color;
+}
+
+.dark .oi{
+    color: $dark_text_color;
+}
