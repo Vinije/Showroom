@@ -1,0 +1,64 @@
+﻿/*light*/
+/*dark*/
+body, html {
+  background: linear-gradient(90deg, #ebebeb 10%, #ffffff 40%, #ffffff 60%, #ebebeb 90%);
+  height: 100%; }
+
+.dark body, html {
+  background: linear-gradient(90deg, #232323 10%, #001f35 40%, #001f35 60%, #232323 90%);
+  height: 100%; }
+
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%; }
+
+.card {
+  background: rgba(255, 255, 255, 0.35);
+  color: #001f35; }
+
+.dark .card {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff; }
+
+.form-group {
+  background: rgba(255, 255, 255, 0.35);
+  color: #001f35; }
+
+.dark .form-group {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff; }
+
+.nav-link {
+  background-color: rgba(97, 126, 147, 0.5);
+  color: #001f35; }
+
+.dark .nav-link {
+  background-color: rgba(36, 69, 91, 0.5);
+  color: #ffffff; }
+
+.sidebar .nav-item a:hover {
+  background-color: #617e93;
+  color: #001f35; }
+
+.dark .sidebar, .dark .nav-item, .dark .a {
+  color: #ffffff; }
+
+.nav-link:hover {
+  background-color: #617e93; }
+
+a:hover {
+  background-color: #617e93; }
+
+b {
+  color: #001f35; }
+
+.dark b {
+  color: #ffffff; }
+
+.oi {
+  color: #001f35; }
+
+.dark .oi {
+  color: #ffffff; }

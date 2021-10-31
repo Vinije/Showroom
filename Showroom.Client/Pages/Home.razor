@@ -1,0 +1,49 @@
+﻿@page "/"
+
+<div class="@ThemeManager.CurrentTheme container">
+    <h1>Latest projects</h1>
+    <div class="card-deck">
+        @if (Projects != null)
+        {
+            foreach (var project in Projects)
+            {
+                <div class="card align-content-center col-3">
+                    <div class="card-header">
+                        @project.Name
+                    </div>
+                    <div class="card-body">
+                        <img height="100" width="100" src="@project.ProjectThumbnail">
+                        <p>@project.Description</p>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="spinner"></div>
+        }
+    </div>
+    <br />
+    <h1>Top rated</h1>
+    <div class="card-deck">
+        @if (Projects != null)
+        {
+            foreach (var project in Projects)
+            {
+                <div class="card align-content-center col-3">
+                    <div class="card-header">
+                        @project.ProjectType
+                    </div>
+                    <div class="card-body">
+                        <img height="100" width="100" src="@project.ProjectThumbnail">
+                        <p>@project.Description</p>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="spinner"></div>
+        }
+    </div>
+</div>

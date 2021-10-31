@@ -1,0 +1,26 @@
+﻿[
+    {
+        "outputFile": "Pages/Home.razor.css",
+        "inputFile": "Pages/Home.razor.scss"
+    },
+    {
+        "outputFile": "Shared/MainLayout.razor.css",
+        "inputFile": "Shared/MainLayout.razor.scss"
+    },
+    {
+        "outputFile": "Shared/NavHeader.razor.css",
+        "inputFile": "Shared/NavHeader.razor.scss"
+    },
+    {
+        "outputFile": "Shared/NavMenu.razor.css",
+        "inputFile": "Shared/NavMenu.razor.scss"
+    },
+    {
+        "outputFile": "wwwroot/css/Common.css",
+        "inputFile": "Styles/Common.scss"
+    },
+    {
+        "outputFile": "Areas/Identity/site.css",
+        "inputFile": "Styles/Common.scss"
+    }
+]

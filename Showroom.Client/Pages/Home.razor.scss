@@ -1,0 +1,24 @@
+﻿@import "../Styles/Common.scss";
+
+h1{
+    color: $text_color;
+}
+
+.dark h1{
+    color: $dark_text_color;
+}
+
+.carousel-inner{
+    border: solid 2px $border_color;
+    border-radius: 2px 2px;
+}
+
+.sidebar {
+    /*background-color: $main_body_background;*/
+    border: solid 1px $border_color;
+}
+
+hover{
+    background-color: $menu_item_background_hover;
+}
+

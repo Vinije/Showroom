@@ -1,0 +1,70 @@
+﻿@using Showroom.Presentation.Themes
+@inject IThemeManager TM
+@inject TokenProvider TokenProvider
+
+<div class="col-3 logo">
+    <div class="container  m-0 p-0">
+        <a class="navbar-brand mt-3" href="">
+            <img class="img-fluid float-left mr-3" height="40" width="40" src="Images/logo.png" />
+            <p>
+                <b class="title">3DShow-Room</b> <br />
+                <i class="author">Vaclav Pfudl</i>
+            </p>
+        </a>
+    </div>
+</div>
+
+<div class="themeButton col-6 header text-center">
+    <div class="text-center">
+        <button @onclick="@(() => TM.SwitchThemeNext())">
+            <img class="img-fluid" height="40" width="40" src=@GetLogo() />
+            <span class="oi rounded-circle">@TM.CurrentTheme</span>
+        </button>
+    </div>
+</div>
+
+<div class="col-3 navbar navbar-expand-md header">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul>
+            <AuthorizeView>
+                <Authorized>
+                    <li class="nav-item p-3">
+                        <NavLink class="nav-link" href="Identity/Account/Manage">
+                            <span class="oi" aria-hidden="true">@context.User.Identity.Name!</span>
+                        </NavLink>
+                    </li>
+                    <li class="nav-item p-3">
+                        <form method="post" action="Identity/Account/LogOut?returnUrl=%2F">
+                            <button type="submit" class="nav-link btn btn-link px-2">Log out</button>
+                            <input name="_RequestVerificationToken" type="hidden" value="@TokenProvider.XsrfToken" />
+                        </form>
+                    </li>
+                </Authorized>
+                <NotAuthorized>
+                    <li class="nav-item p-3"><a href="Identity/Account/Register">Register</a></li>
+                    
+                    <li class="nav-item p-3">
+                        <a href="Identity/Account/Login">
+                            <span class="oi" aria-hidden="true">Login</span>
+                        </a>
+                    </li>
+                </NotAuthorized>
+            </AuthorizeView>
+        </ul>
+    </div>
+</div>
+
+@code
+{
+    private const string LightLogo = "/Images/light_sun.jpg";
+    private const string DarkLogo = "/Images/dark_moon.jpg";
+
+
+    public string GetLogo()
+    {
+        return TM.CurrentTheme == "dark" ? DarkLogo : LightLogo;
+    }
+}
