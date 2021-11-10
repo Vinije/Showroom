@@ -14,20 +14,8 @@
     </div>
 </div>
 
-<div class="themeButton col-6 header text-center">
-    <div class="text-center">
-        <button @onclick="@(() => TM.SwitchThemeNext())">
-            <img class="img-fluid" height="40" width="40" src=@GetLogo() />
-            <span class="oi rounded-circle">@TM.CurrentTheme</span>
-        </button>
-    </div>
-</div>
-
-<div class="col-3 navbar navbar-expand-md header">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+<div class="col-9 justify-content-end header">
+    <div class="justify-content-end" id="loginMenu">
         <ul>
             <AuthorizeView>
                 <Authorized>
@@ -52,8 +40,9 @@
                         </a>
                     </li>
                 </NotAuthorized>
-            </AuthorizeView>
+            </AuthorizeView>            
         </ul>
+        <button class="rounded-circle themeButton" @onclick="@(() => TM.SwitchThemeNext())"/>    
     </div>
 </div>
 

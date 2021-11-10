@@ -14,6 +14,9 @@
         [Inject] 
         public IJSRuntime JsRuntime { get; set; }
 
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+
         [Inject] 
         public ThemeManager ThemeManager { get; set; }
 

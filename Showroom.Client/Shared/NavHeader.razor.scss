@@ -1,13 +1,24 @@
 ﻿@import "../Styles/Common.scss";
 
 .themeButton {
-    padding-top: 2rem;
-    border-bottom: solid $border_color;
+    background: $background_gradient;
+    height: 26px;
+    width: 26px;
+    margin: 16px 20px 10px 0px;
+    border-color: $dark_background_gradient;
+    float: right;
+}
+
+#loginMenu{
+    margin: 0px 30px 0px 0px;
 }
 
 .dark .themeButton {
-    padding-top: 2rem;
-    border-bottom: solid $dark_border_color;
+    background: $dark_background_gradient;
+    height: 26px;
+    width: 26px;
+    margin: 16px 20px 10px 0px;
+    border-color: $background_gradient;
 }
 
 .logo, .header {
@@ -28,19 +39,22 @@
 
 ul {
     list-style-type: none;
-    padding-top: 1em;
+    padding: 0;
+    margin: 0;
 }
 
 li {
-    float: left;
     background-color: $menu_item_background;
     color: $text_color;
+    float: right;
+    margin: 20px 20px 0px 0px;
 }
 
 .dark li {
-    float: left;
     background-color: $dark_menu_item_background;
     color: $dark_text_color;
+    float: right;
+    margin: 20px 20px 0px 0px;
 }
 
 a {

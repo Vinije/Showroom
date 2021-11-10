@@ -1,5 +1,15 @@
-﻿<h3>Profile</h3>
+﻿@page "/profile"
 
-@code {
 
-}
+<h3>Profile</h3>
+
+<AuthorizeView>
+    <Authorized>
+        @if (UserProfile != null){
+            <h4>@UserProfile.UserName</h4>
+        }
+    </Authorized>
+    <NotAuthorized>
+        Not authorized.
+    </NotAuthorized>
+</AuthorizeView>

@@ -12,6 +12,7 @@ using Showroom.Api.Models;
 using Showroom.Client.Areas.Identity;
 using Showroom.Client.Data;
 using Showroom.Client.Services;
+using Showroom.Models;
 using Showroom.Presentation.Extensions;
 using Showroom.Presentation.UserInterface;
 
@@ -35,13 +36,15 @@ namespace Showroom.Client
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddThemeManager();
+
+            services.AddScoped<IUserService, UserService>();
 
             services.AddHttpClient<IProjectService, ProjectService>(client =>
                 client.BaseAddress = new Uri(UriString));
@@ -50,7 +53,7 @@ namespace Showroom.Client
 
             services.AddScoped<TokenProvider>();
 
-            services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
+            services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<User>>();
             services.AddDatabaseDeveloperPageExceptionFilter();
         }
 

@@ -1,4 +1,4 @@
-﻿namespace Showroom.Client.Pages
+﻿namespace Showroom.Client.Shared
 {
     using System;
     using System.Threading.Tasks;

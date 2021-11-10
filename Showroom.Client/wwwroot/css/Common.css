@@ -8,12 +8,6 @@ body, html {
   background: linear-gradient(90deg, #232323 10%, #001f35 40%, #001f35 60%, #232323 90%);
   height: 100%; }
 
-html {
-  height: 100%; }
-
-body {
-  min-height: 100%; }
-
 .card {
   background: rgba(255, 255, 255, 0.35);
   color: #001f35; }
@@ -35,3 +29,15 @@ body {
   bottom: 0px;
   position: absolute;
   width: 100%; }
+
+h1, h2, h3, h4 {
+  color: #001f35; }
+
+.dark h1, h2, h3, h4 {
+  color: #ffffff; }
+
+.text-center {
+  color: #001f35; }
+
+.dark .text-center {
+  color: #808080; }

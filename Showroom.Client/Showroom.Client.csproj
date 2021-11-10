@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="BlazorStrap" Version="1.5.1" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.11" />
@@ -39,6 +40,7 @@
     <ProjectReference Include="..\Presentation\Showroom.Presentation.csproj" />
     <ProjectReference Include="..\Shared\Showroom.Models\Showroom.Models.csproj" />
     <ProjectReference Include="..\Showroom.Api\Showroom.Api.csproj" />
+    <ProjectReference Include="..\VaclavPfudl.Components\VaclavPfudl.Components.csproj" />
   </ItemGroup>
 
   <ItemGroup>

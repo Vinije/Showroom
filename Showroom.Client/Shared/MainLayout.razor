@@ -1,17 +1,15 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="container-fluid col main @ThemeManager.CurrentTheme">
-    <div class="row main">
+<div class="container-fluid @ThemeManager.CurrentTheme">
+    <div class="row header">
         <NavHeader />
     </div>
 
-    <div class="row main">
-        <div class="row main mt-3 p-0">
-            @Body
-        </div>
+    <div class="row d-flex justify-content-center mainbody">
+            @Body        
     </div>
 
-    <div class="modal-footer">
+    <div class="footer">
         Copyright Vaclav Pfudl
     </div>
 </div>

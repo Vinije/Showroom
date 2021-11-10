@@ -1,24 +1,24 @@
 ﻿@import "../Styles/Common.scss";
 
-h1{
+#navigatorMenu {
+    overflow: hidden;
+    float: left;
+    padding: 1em;
+    position: fixed;
+    top: 6.5em;
+    left: 1em;
+}
+
+#navigatorMenuButton {
     color: $text_color;
+    border: none;
 }
 
-.dark h1{
+.dark #navigatorMenuButton {
     color: $dark_text_color;
+    border: none;
 }
 
-.carousel-inner{
-    border: solid 2px $border_color;
-    border-radius: 2px 2px;
-}
-
-.sidebar {
-    /*background-color: $main_body_background;*/
-    border: solid 1px $border_color;
-}
-
-hover{
+hover {
     background-color: $menu_item_background_hover;
 }
-

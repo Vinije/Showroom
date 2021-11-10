@@ -1,9 +1,25 @@
 ﻿@import "../Styles/Common.scss";
 
-.main, body {
+body {
     background: $background_gradient;
 }
 
-.dark .main, body{
+.header .dark {
+    background: $dark_border_color
+}
+
+.mainbody {
+    background: $background_gradient;
+}
+
+.dark .mainbody {
+    background: $dark_background_gradient;
+}
+
+.header {
+    background: $border_color;
+}
+
+.dark body {
     background: $dark_background_gradient;
 }

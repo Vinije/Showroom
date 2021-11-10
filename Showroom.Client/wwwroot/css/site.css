@@ -28,8 +28,8 @@ a, .btn-link {
 
 app {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: normal;
+    flex-direction: row;
 }
 
 .top-row {

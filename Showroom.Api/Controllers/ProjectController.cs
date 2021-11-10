@@ -95,25 +95,25 @@
             }
         }
 
-        //[HttpDelete("{id:int}")]
-        //public async Task<ActionResult<User>> DeleteUser(int id)
-        //{
-        //    var userToDelete = await _projectRepository.GetUser(id);
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<Project>> DeleteProject(int id)
+        {
+            var projectToDelete = await _projectRepository.GetProject(id);
 
-        //    if (userToDelete == null)
-        //    {
-        //        return NotFound($"User with id {id} not fou");
-        //    }
+            if (projectToDelete == null)
+            {
+                return NotFound($"User with id {id} not fou");
+            }
 
-        //    try
-        //    {
-        //        return Ok(await _projectRepository.DeleteUser(id));
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine(e);
-        //        return StatusCode(StatusCodes.Status500InternalServerError);
-        //    }
-        //}
+            try
+            {
+                return Ok(await _projectRepository.DeleteProject(id));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }

@@ -1,49 +1,107 @@
 ﻿@page "/"
 
-<div class="@ThemeManager.CurrentTheme container">
-    <h1>Latest projects</h1>
-    @if (Projects != null)
-    {
-        <div class="card-deck">
-            @foreach (var project in Projects)
-            {
-            <div class="card align-content-center col-3">
-                <div class="card-header">
-                    @project.Name
-                </div>
-                <div class="card-body">
-                    <img height="100" width="100" src="@project.ProjectThumbnail">
-                    <p>@project.Description</p>
-                </div>
+<AnchorNavigation JSRuntime="@JsRuntime" NavigationManager="@NavigationManager" />
+
+<div class="sticky-top justify-content-around" id="navigatorMenu">
+    <button id="navigatorMenuButton" type="button" 
+    class="navbar-toggler-icon" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="oi oi-list-rich"></span>
+    </button>
+    <div class="collapse" id="collapsibleNavbar">
+        <NavLink class="nav-link" href="#section1">
+            Latest
+        </NavLink>
+        <NavLink class="nav-link" href="#section2">
+            Top rated
+        </NavLink>
+        <NavLink class="nav-link" href="#section3">
+            Most viewed
+        </NavLink>
+    </div>
+</div>
+
+<div class="container-fluid justify-content-center col-12">
+    <section class="row" id="section1">
+        <h2 class="col-12 text-center">Latest</h2>
+        @if (Projects != null)
+        {
+            <div class="card-deck row col-12 justify-content-center">
+                @foreach (var project in Projects)
+                {
+                    <div class="card align-content-center col-2">
+                        <div class="card-header">
+                            @project.Name
+                        </div>
+                        <div class="card-body">
+                            <img height="100" width="100" src="@project.ProjectThumbnail">
+                            <p>@project.Description</p>
+                        </div>
+                    </div>
+                }
             </div>
-            }
-        </div>
-    }
-    else
-    {
-        <div class="spinner w-25 h-25"></div>
-    }
-    <br />
-    <h1>Top rated</h1>
-    @if (Projects != null)
-    {
-        <div class="card-deck">
-            @foreach (var project in Projects)
-            {
-            <div class="card align-content-center col-3">
-                <div class="card-header">
-                    @project.Name
-                </div>
-                <div class="card-body">
-                    <img height="100" width="100" src="@project.ProjectThumbnail">
-                    <p>@project.Description</p>
-                </div>
+        }
+        else
+        {
+            <div class="spinner w-25 h-25"></div>
+        }
+
+    </section>
+
+
+    <section class="row" id="section2">
+        <h2 class="col-12 text-center">Top rated</h2>
+        @if (Projects != null)
+        {
+            <div class="card-deck row col-12 justify-content-center">
+                @foreach (var project in Projects)
+                {
+                    <div class="card align-content-center col-2">
+                        <div class="card-header">
+                            @project.Name
+                        </div>
+                        <div class="card-body">
+                            <img height="100" width="100" src="@project.ProjectThumbnail">
+                            <p>@project.Description</p>
+                        </div>
+                    </div>
+                }
             </div>
-            }
-        </div>
-    }
-    else
-    {
-        <div class="spinner w-25 h-25"></div>
-    }
+        }
+        else
+        {
+            <div class="spinner w-25 h-25"></div>
+        }
+
+    </section>
+
+
+    <section class="row" id="section3">
+        <h2 class="col-12 text-center">Most viewed</h2>
+        @if (Projects != null)
+        {
+            <div class="card-deck row col-12 justify-content-center">
+                @foreach (var project in Projects)
+                {
+                    <div class="card align-content-center col-2">
+                        <div class="card-header">
+                            @project.Name
+                        </div>
+                        <div class="card-body">
+                            <img height="100" width="100" src="@project.ProjectThumbnail">
+                            <p>
+                                @project.Description <br>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="spinner w-25 h-25"></div>
+        }
+
+    </section>
+
 </div>

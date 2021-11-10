@@ -36,14 +36,6 @@ body, html {
     height: 100%;
 }
 
-html{
-    height: 100%;
-}
-
-body{
-    min-height: 100%;
-}
-
 .card {
     background: $main_body_background;
     color: $text_color;
@@ -69,4 +61,21 @@ body{
     bottom: 0px;
     position: absolute;
     width: 100%;
+}
+
+
+h1, h2, h3, h4 {
+    color: $text_color;
+}
+
+.dark h1, h2, h3, h4 {
+    color: $dark_text_color;
+}
+
+.text-center {
+    color: $text_color;
+}
+
+.dark .text-center {
+    color: $dark_border_color;
 }
