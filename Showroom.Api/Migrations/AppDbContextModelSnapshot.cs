@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Showroom.Api.Models;
 
-namespace GenProc3D.Api.Migrations
+namespace Showroom.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -15,7 +15,7 @@ namespace GenProc3D.Api.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
+                .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Showroom.Models.Project", b =>
@@ -31,8 +31,8 @@ namespace GenProc3D.Api.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OwnerId")
-                        .HasColumnType("int");
+                    b.Property<string>("OwnerId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectPath")
                         .HasColumnType("nvarchar(max)");
@@ -59,9 +59,9 @@ namespace GenProc3D.Api.Migrations
                             Id = 1,
                             Description = "This is just a test, this should influence 90% of people.",
                             Name = "Test 1",
-                            OwnerId = 200,
+                            OwnerId = "200",
                             ProjectPath = "Projects/TestProject1",
-                            ProjectThumbnail = "images / Untitled1.png",
+                            ProjectThumbnail = "images/Untitled1.png",
                             ProjectType = 0,
                             Rating = 0.0,
                             Views = 0
@@ -71,9 +71,9 @@ namespace GenProc3D.Api.Migrations
                             Id = 2,
                             Description = "This is description of test project number 2. This is also awesome project.",
                             Name = "Test 2",
-                            OwnerId = 250,
+                            OwnerId = "250",
                             ProjectPath = "Projects/TestProject2",
-                            ProjectThumbnail = "images / Untitled2.png",
+                            ProjectThumbnail = "images/Untitled2.png",
                             ProjectType = 1,
                             Rating = 0.0,
                             Views = 0

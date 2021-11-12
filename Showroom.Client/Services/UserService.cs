@@ -12,11 +12,15 @@ namespace Showroom.Client.Services
         {
             _userManager = manager;
         }
-
         
-        public async Task<User> GetUser(string userId)
+        public async Task<User> GetUserById(string userId)
         {
             return await _userManager.FindByIdAsync(userId);
+        }
+
+        public async Task<User> GetUserByName(string userName)
+        {
+            return await _userManager.FindByNameAsync(userName);                
         }
     }
 }

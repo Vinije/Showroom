@@ -19,7 +19,7 @@
             return await _appDbContext.Projects.ToArrayAsync();
         }
 
-        public async Task<IEnumerable<Project>> GetProjects(int ownerId)
+        public async Task<IEnumerable<Project>> GetProjects(string ownerId)
         {
             var projects = await _appDbContext.Projects.ToListAsync();
 

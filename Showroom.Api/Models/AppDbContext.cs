@@ -19,7 +19,7 @@
             modelBuilder.Entity<Project>().HasData(new Project
             {
                 Id = 1,
-                OwnerId = 200,
+                OwnerId = "200",
                 Name = "Test 1",
                 Description = "This is just a test, this should influence 90% of people.",
                 ProjectType = ProjectType.Gameplay,
@@ -32,7 +32,7 @@
             modelBuilder.Entity<Project>().HasData(new Project
             {
                 Id = 2,
-                OwnerId = 250,
+                OwnerId = "250",
                 Name = "Test 2",
                 Description = "This is description of test project number 2. This is also awesome project.",
                 ProjectType = ProjectType.Showroom,

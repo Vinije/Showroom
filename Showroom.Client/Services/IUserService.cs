@@ -6,6 +6,8 @@ namespace Showroom.Client.Services
 {
     public interface IUserService
     {
-        Task<User> GetUser(string userId);
+        Task<User> GetUserById(string userId);
+
+        Task<User> GetUserByName(string userName);
     }
 }

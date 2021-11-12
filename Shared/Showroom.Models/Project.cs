@@ -10,7 +10,7 @@
 
         public ProjectType ProjectType { get; set; }
 
-        public int OwnerId { get; set; }
+        public string OwnerId { get; set; }
 
         public string ProjectPath { get; set; }
 

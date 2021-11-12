@@ -19,7 +19,7 @@
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetUsers()
+        public async Task<ActionResult> GetProjects()
         {
             try
             {
@@ -28,6 +28,20 @@
             catch (Exception)
             {
                 Console.WriteLine("Couldnt get users");
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpGet("GetProjectsByUser/{userId}")]
+        public async Task<ActionResult> GetProjectsByUser(string userId)
+        {
+            try
+            {
+                return Ok(await _projectRepository.GetProjects(userId));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }

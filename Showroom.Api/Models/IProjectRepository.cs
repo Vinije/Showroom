@@ -6,7 +6,7 @@
 
     public interface IProjectRepository
     {
-        Task<IEnumerable<Project>> GetProjects(int ownerId);
+        Task<IEnumerable<Project>> GetProjects(string ownerId);
 
         Task<IEnumerable<Project>> GetProjects();
         

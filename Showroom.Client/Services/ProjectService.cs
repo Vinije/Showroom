@@ -15,10 +15,24 @@ namespace Showroom.Client.Services
             _httpClient = httpClient;
         }
 
-
         public async Task<IEnumerable<Project>> GetProjects()
         {
             return await _httpClient.GetFromJsonAsync<Project[]>("api/project");
+        }
+
+        public async Task<IEnumerable<Project>> GetProjectsByUser(string userId)
+        {
+            return await _httpClient.GetFromJsonAsync<Project[]>($"api/project/GetProjectsByUser/{userId}");
+        }
+
+        public async Task AddNewProject(Project newProject)
+        {
+            var httpResponse = await _httpClient.PostAsJsonAsync<Project>($"api/project", newProject);
+
+            if (!httpResponse.IsSuccessStatusCode)
+            {
+                throw new HttpRequestException("Could not create a new project.");
+            }
         }
     }
 }

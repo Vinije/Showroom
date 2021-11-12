@@ -1,15 +1,19 @@
-﻿@page "/profile"
+﻿@page "/profile/{Username}"
 
+@inject ThemeManager TM
 
-<h3>Profile</h3>
+<div class="container @TM.CurrentTheme">
+    @if (UserProfile != null)
+    {
+        <h3 class="row">Welcome @UserProfile.UserName!</h3>
 
-<AuthorizeView>
-    <Authorized>
-        @if (UserProfile != null){
-            <h4>@UserProfile.UserName</h4>
-        }
-    </Authorized>
-    <NotAuthorized>
-        Not authorized.
-    </NotAuthorized>
-</AuthorizeView>
+        @if(UserProfile.Id == AuthenticatedUser?.Id)
+        {
+            <div class="row justify-content-center">
+                <span class="oi oi-plus" @onclick="@ShowAddProjectDialog"/>       
+            </div>    
+
+            <AddProjectDialog @ref="@ProjectDialog"/>
+        }        
+    }
+</div>

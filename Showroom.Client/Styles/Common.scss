@@ -9,7 +9,7 @@ $menu_item_background_hover: rgba(#24455b, 1);
 $text_color: #001f35;
 $border_color: #808080;
 $background_gradient: linear-gradient(90deg, $header_background_start 10%, $header_background_mid 40%, $header_background_mid 60%, $header_background_start 90%);
-$main_body_background: rgba(#ffffff, 0.35);
+$main_body_background: rgba(#ffffff, 0.7);
 $menu_item_background: rgba(#617e93, 0.5);
 $menu_item_background_hover: #617e93;
 
@@ -24,7 +24,7 @@ $dark_border_color_gradient: linear-gradient(90deg, $dark_header_background_end 
 $dark_menu_item_background: rgba(#24455b, 0.5);
 $dark_menu_item_background_hover: rgba(#24455b, 1);
 $dark_background_gradient: linear-gradient(90deg, $dark_header_background_start 10%, $dark_header_background_mid 40%, $dark_header_background_mid 60%, $dark_header_background_start 90%);
-$dark_main_body_background: rgba(#ffffff, 0.05);
+$dark_main_body_background: rgba(#211845, 0.7);
 
 body, html {
     background: $dark_background_gradient;
@@ -36,12 +36,12 @@ body, html {
     height: 100%;
 }
 
-.card {
+.card, card-body, card-header {
     background: $main_body_background;
     color: $text_color;
 }
 
-.dark .card {
+.dark .card, .dark card-body, .dark card-header {
     background: $dark_main_body_background;
     color: $dark_text_color;
 }
@@ -65,7 +65,7 @@ body, html {
 
 
 h1, h2, h3, h4 {
-    color: $text_color;
+    color: $text_color;    
 }
 
 .dark h1, h2, h3, h4 {
@@ -78,4 +78,8 @@ h1, h2, h3, h4 {
 
 .dark .text-center {
     color: $dark_border_color;
+}
+
+.oi-plus{
+    color: forestgreen;
 }
