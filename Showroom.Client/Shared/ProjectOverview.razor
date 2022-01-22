@@ -1,0 +1,31 @@
+﻿@using Showroom.Client.Pages
+
+@if (Project != null)
+{
+    <AddProjectDialog @ref="ProjectDialog" AddProjectCloseEvent="@OnCloseProjectDialog"></AddProjectDialog>
+
+    <div class="card mb-3" @onmouseover="@OnMouseOver" @onmouseout="@OnMouseLeave"
+     style="min-width: 28rem; height: 16rem; background-image: url('Images/@Project.ProjectThumbnail');">
+
+        <div class="card-body">
+            <h5 class="card-title text-center">@Project.Name</h5>
+            <text class="card-text overflow-hidden">@Project.Description</text>
+        </div>
+        <div class="card-footer toolbar-icons m-5 d-flex justify-content-center">
+            @if (IsHovered)
+            {
+                <i class="bi-play-btn"></i>
+
+                <img src="Icons/play-btn-fill.svg" style="color: green;" class="play-button"/>
+                
+                <img src="Icons/info-circle.svg" class="bi bi-info-circle"/>
+                
+                @if (IsUserAuthorizedToEdit)
+                {
+                    <img src="Icons/trash.svg" @onclick="@DeleteProject"/>
+                    <img src="Icons/pencil.svg" @onclick="@EditProject"/>
+                }
+            }
+        </div>
+    </div>
+}

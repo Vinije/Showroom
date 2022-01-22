@@ -1,0 +1,15 @@
+﻿@if (Projects != null)
+{
+    <div class="card-deck d-flex justify-content-center">
+        @foreach (var project in Projects)
+        {
+            <ProjectOverview Project="project"></ProjectOverview>
+        }
+    </div>
+}
+else
+{
+    <div class="justify-content-center h-100 w-100 text-center">
+        <p>No projects available</p>
+    </div>
+}

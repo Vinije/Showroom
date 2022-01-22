@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Showroom.Client.Services;
@@ -22,22 +22,26 @@ namespace Showroom.Client.Pages
         [Inject]
         public IProjectService ProjectService { get; set; }
 
-        protected async override Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
 
             var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
 
-            AuthenticatedUser = await UserService.GetUserById(authenticationState.User.Identity.GetUserId());                  
+            string userId = authenticationState.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            AuthenticatedUser = await UserService.GetUserById(userId);                  
         }
 
-        protected async override Task OnParametersSetAsync()
+        protected override async Task OnParametersSetAsync()
         {
             await base.OnParametersSetAsync();
 
             UserProfile = await UserService.GetUserById(Username);
 
             UserProjects = await ProjectService.GetProjectsByUser(UserProfile.Id);
+
+            StateHasChanged();
         }
 
         public AddProjectDialog ProjectDialog { get; set; }
@@ -46,11 +50,18 @@ namespace Showroom.Client.Pages
 
         public User AuthenticatedUser { get; private set; }
 
-        public IEnumerable<Project> UserProjects { get; private set; }
+        public IEnumerable<IProject> UserProjects { get; private set; }
 
         public void ShowAddProjectDialog()
         {
             ProjectDialog?.Show();
+        }
+
+        private async Task AddDialogClosed()
+        {
+            UserProjects = await ProjectService.GetProjectsByUser(UserProfile.Id);
+
+            StateHasChanged();
         }
     }
 }

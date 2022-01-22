@@ -22,7 +22,7 @@
                 OwnerId = "200",
                 Name = "Test 1",
                 Description = "This is just a test, this should influence 90% of people.",
-                ProjectType = ProjectType.Gameplay,
+                ProjectType = ProjectType.GamePlay,
                 ProjectPath = "Projects/TestProject1",
                 ProjectThumbnail = "images/Untitled1.png",
                 Rating = 0,

@@ -2,7 +2,9 @@
 {
     public enum ProjectType
     {
-        Gameplay,
+        GamePlay,
+        Render,
+        Video,
         Showroom
     }
 }

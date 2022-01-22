@@ -1,5 +1,5 @@
-﻿@using Microsoft.AspNet.Identity
-@using Showroom.Presentation.Themes
+﻿@using Showroom.Presentation.Themes
+@using System.Security.Claims
 @inject IThemeManager TM
 @inject TokenProvider TokenProvider
 @inject NavigationManager NavManager
@@ -64,7 +64,7 @@
     {
         var authState = await AuthStateProvider.GetAuthenticationStateAsync();
 
-        string userName = authState.User.Identity.GetUserId();
+	    string userName = authState.User.FindFirstValue(ClaimTypes.NameIdentifier);
         
         NavManager.NavigateTo($"/profile/{userName}", true);
     }

@@ -1,39 +1,53 @@
-﻿@if (IsVisible)
+﻿@using Showroom.Models
+
+@if (IsVisible)
 {
-    <div class="modal fade show d-block" id="exampleModal" tabindex="-1" role="dialog">  
-    <div class="modal-dialog" role="document">  
-        <div class="modal-content">  
-            <div class="modal-header">  
-                <h5 class="modal-title" id="titleLabel">Add Employee</h5>  
-                <button type="button" class="close" @onclick="@Hide" data-dismiss="modal" aria-label="Hide">  
-                    <span aria-hidden="true">×</span>  
-                </button>  
-            </div>  
-            <div class="modal-body">  
-                <EditForm Model="@NewProject" OnValidSubmit="@HandleValidSubmit">  
-                    <DataAnnotationsValidator />  
-                    <ValidationSummary />  
-                    <div class="form-group">  
-                        <label for="name">Name: </label>  
-                        <InputText id="name" class="form-control" @bind-Value="@NewProject.Name" placeholder="Enter name"></InputText>  
-                        <ValidationMessage For="@(() => NewProject.Name)" />  
-                    </div>  
-                    <div class="form-group">  
-                        <label for="description">Description: </label>  
-                        <InputText id="decription" class="form-control" @bind-Value="@NewProject.Description" placeholder="Enter project description"></InputText>  
-                        <ValidationMessage For="@(() => NewProject.Description)" />  
-                    </div>  
-                    @*<div class="form-group">  
-                        <label for="email">Email: </label>  
-                        <InputText id="email" class="form-control" @bind-Value="@NewProject.Email" placeholder="Enter email"></InputText>  
-                        <ValidationMessage For="@(() => Employee.Email)" />  
-                    </div>  *@
-                    <button type="submit" class="btn btn-primary">Save project</button>  
-                    <a class="btn btn-outline-primary" @onclick="@Hide">Close</a>  
-                </EditForm>  
-            </div>  
-        </div>  
-    </div>  
-</div>  
+    <div class="modal fade show d-block" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleLabel">@Title</h5>
+                    <button type="button" class="close" @onclick="@Hide" data-dismiss="modal" aria-label="Hide">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <EditForm Model="@NewProject" OnValidSubmit="@HandleValidSubmit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div class="form-group row">
+                            <label for="name">Name: </label>
+                            <InputText id="name" class="form-control col-6" @bind-Value="@NewProject.Name" placeholder="Enter name"></InputText>
+                            <ValidationMessage For="@(() => NewProject.Name)" />
+                            @if (NewProject.ProjectThumbnail != null)
+                            {
+                                <img class="img-thumbnail" src="Images/@NewProject.ProjectThumbnail" />
+                            }
+                            else
+                            {
+                                <img class="img-thumbnail" src="Images/placeholder.png" />
+                            }
+                            <InputFile OnChange="OnThumbnailFileChange"></InputFile>
+                        </div>
+                        <div class="form-group">
+                            <InputSelect @bind-Value="NewProject.ProjectType">
+                                @foreach (var projectType in Enum.GetValues(typeof(ProjectType)))
+                                {
+                                <option value="@projectType">@projectType</option>
+                                }
+                        </InputSelect>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description: </label>
+                        <InputText id="decription" class="form-control" @bind-Value="@NewProject.Description" placeholder="Enter project description"></InputText>
+                        <ValidationMessage For="@(() => NewProject.Description)" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save project</button>
+                    <a class="btn btn-outline-primary" @onclick="@Hide">Close</a>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
 
 }  

@@ -6,10 +6,14 @@ namespace Showroom.Client.Services
 {
     public interface IProjectService
     {
-        Task<IEnumerable<Project>> GetProjects();
+        Task<IEnumerable<IProject>> GetProjects();
 
-        Task<IEnumerable<Project>> GetProjectsByUser(string userId);
+        Task<IEnumerable<IProject>> GetProjectsByUser(string userId);
 
-        Task AddNewProject(Project newProject);
+        Task AddNewProject(IProject newProject);
+
+        Task DeleteProject(int projectId);
+
+        Task EditProject(int projectId, IProject project);
     }
 }

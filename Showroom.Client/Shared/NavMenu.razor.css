@@ -8,13 +8,15 @@ body, html {
   background: linear-gradient(90deg, #232323 10%, #001f35 40%, #001f35 60%, #232323 90%);
   height: 100%; }
 
-.card, card-body, card-header {
+.mainbody .card, card-body, card-header {
   background: rgba(255, 255, 255, 0.7);
-  color: #001f35; }
+  color: #001f35;
+  flex: 0 1; }
 
 .dark .card, .dark card-body, .dark card-header {
   background: rgba(33, 24, 69, 0.7);
-  color: #ffffff; }
+  color: #ffffff;
+  flex: 0 1; }
 
 .form-group {
   background: rgba(255, 255, 255, 0.7);
@@ -40,7 +42,7 @@ h1, h2, h3, h4 {
   color: #001f35; }
 
 .dark .text-center {
-  color: #808080; }
+  color: #ffffff; }
 
 .oi-plus {
   color: forestgreen; }
@@ -50,7 +52,7 @@ h1, h2, h3, h4 {
   color: #001f35; }
 
 .dark .nav-link {
-  background-color: rgba(36, 69, 91, 0.5);
+  background-color: #24455b;
   color: #ffffff; }
 
 .sidebar .nav-item a:hover {

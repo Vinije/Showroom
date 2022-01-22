@@ -15,20 +15,14 @@ body {
     height: 100%;
     /* Center and scale the image nicely */
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 .dark .mainbody {
     /*background: $dark_background_gradient;*/
-    
-    background-image: url("./Images/baloons.png");
-    /* Full height */
-    height: 100%;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+    background-image: url("./Images/vertical-night-sky-3c38e2irmokctrj1.jpg");
 }
 
 .header {

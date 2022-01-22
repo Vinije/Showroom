@@ -18,14 +18,14 @@
         public NavigationManager NavigationManager { get; set; }
 
         [Inject] 
-        public ThemeManager ThemeManager { get; set; }
+        public IThemeManager ThemeManager { get; set; }
 
         [Inject] 
         public IProjectService ProjectService { get; set; }
 
-        public IEnumerable<Project> Projects { get; set; }
+        public IEnumerable<IProject> Projects { get; set; }
 
-        protected async override Task OnAfterRenderAsync(bool firstRender)
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await JsRuntime.InvokeAsync<object>("initializeCarousel");
 

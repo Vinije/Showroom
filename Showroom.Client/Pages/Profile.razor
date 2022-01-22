@@ -1,19 +1,28 @@
 ﻿@page "/profile/{Username}"
 
-@inject ThemeManager TM
-
-<div class="container @TM.CurrentTheme">
+<div class="container">
     @if (UserProfile != null)
     {
-        <h3 class="row">Welcome @UserProfile.UserName!</h3>
+    <h3 class="row">Welcome @UserProfile.UserName!</h3>
 
-        @if(UserProfile.Id == AuthenticatedUser?.Id)
+
+        @if (UserProjects != null)
         {
-            <div class="row justify-content-center">
-                <span class="oi oi-plus" @onclick="@ShowAddProjectDialog"/>       
-            </div>    
+            <ProjectsOverview Projects="UserProjects"></ProjectsOverview>   
+        }
+        else
+        {
+            <div class="spinner-border"></div>
+        }
 
-            <AddProjectDialog @ref="@ProjectDialog"/>
-        }        
+        @if (UserProfile.Id == AuthenticatedUser?.Id)
+        {
+        <AddProjectDialog @ref="@ProjectDialog" AddProjectCloseEvent="@AddDialogClosed" />
+
+        <div class="row justify-content-center">
+            <span class="oi oi-plus" @onclick="@ShowAddProjectDialog">Add Project</span>
+        </div>
+        }
+
     }
 </div>

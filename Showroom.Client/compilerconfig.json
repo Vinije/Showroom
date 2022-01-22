@@ -30,5 +30,13 @@
   {
     "outputFile": "Pages/AddProjectDialog.razor.css",
     "inputFile": "Pages/AddProjectDialog.razor.scss"
+  },
+  {
+    "outputFile": "Shared/ProjectsOverview.razor.css",
+    "inputFile": "Shared/ProjectsOverview.razor.scss"
+  },
+  {
+    "outputFile": "Shared/ProjectOverview.razor.css",
+    "inputFile": "Shared/ProjectOverview.razor.scss"
   }
 ]
